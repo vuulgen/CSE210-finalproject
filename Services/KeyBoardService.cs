@@ -1,9 +1,9 @@
  using System.Collections.Generic;
 using Raylib_cs;
-using Unit05.Game.Casting;
+using PucMan.Game.Casting;
 
 
-namespace Unit05.Game.Services
+namespace PucMan.Game.Services
 {
     /// <summary>
     /// <para>Detects player input.</para>
