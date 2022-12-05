@@ -77,10 +77,10 @@ namespace PucMan.Game.Scripting
                 direction2 = new Point(0, Constants.CELL_SIZE);
             }
             
-            Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
-            Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
-            cycler.TurnHead(direction);
-            cycler2.TurnHead(direction2);
+            // Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+            // Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
+            // cycler.TurnHead(direction);
+            // cycler2.TurnHead(direction2);
 
         }
     }

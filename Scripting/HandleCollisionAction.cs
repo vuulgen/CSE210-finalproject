@@ -46,111 +46,111 @@ namespace PucMan.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
-            Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
-            Actor head = cycler.GetHead();
-            Actor head2 = cycler2.GetHead();
-            List<Actor> body = cycler.GetBody();
-            List<Actor> body2 = cycler2.GetBody();
+            // Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+            // Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
+            // Actor head = cycler.GetHead();
+            // Actor head2 = cycler2.GetHead();
+            // List<Actor> body = cycler.GetBody();
+            // List<Actor> body2 = cycler2.GetBody();
 
-            foreach (Actor segment in body)
-            {
-                if (segment.GetPosition().Equals(head.GetPosition()))
-                {
-                    Actor message = new Actor();
-                    message.SetText("PLAYER 1 SUICIDE!");
-                    message.SetPosition(winMsgPosition);
-                    cast.AddActor("messages", message);
-                    isGameOver = true;
-                    loser = 1;
-                }
-            }
+            // foreach (Actor segment in body)
+            // {
+            //     if (segment.GetPosition().Equals(head.GetPosition()))
+            //     {
+            //         Actor message = new Actor();
+            //         message.SetText("PLAYER 1 SUICIDE!");
+            //         message.SetPosition(winMsgPosition);
+            //         cast.AddActor("messages", message);
+            //         isGameOver = true;
+            //         loser = 1;
+            //     }
+            // }
 
-            foreach (Actor segment in body)
-            {
-                if (segment.GetPosition().Equals(head2.GetPosition()))
-                {
-                    Actor message = new Actor();
-                    message.SetText("PLAYER 1 WINS!");
-                    message.SetPosition(winMsgPosition);
-                    cast.AddActor("messages", message);
-                    isGameOver = true;
-                    loser = 2;
-                }
-            }
+            // foreach (Actor segment in body)
+            // {
+            //     if (segment.GetPosition().Equals(head2.GetPosition()))
+            //     {
+            //         Actor message = new Actor();
+            //         message.SetText("PLAYER 1 WINS!");
+            //         message.SetPosition(winMsgPosition);
+            //         cast.AddActor("messages", message);
+            //         isGameOver = true;
+            //         loser = 2;
+            //     }
+            // }
 
-             foreach (Actor segment in body2)
-            {
-                if (segment.GetPosition().Equals(head2.GetPosition()))
-                {
-                    Actor message = new Actor();
-                    message.SetText("PLAYER 2 SUICIDE!");
-                    message.SetPosition(winMsgPosition);
-                    cast.AddActor("messages", message);
-                    isGameOver = true;
-                    loser = 2;
-                }
-            }
+            //  foreach (Actor segment in body2)
+            // {
+            //     if (segment.GetPosition().Equals(head2.GetPosition()))
+            //     {
+            //         Actor message = new Actor();
+            //         message.SetText("PLAYER 2 SUICIDE!");
+            //         message.SetPosition(winMsgPosition);
+            //         cast.AddActor("messages", message);
+            //         isGameOver = true;
+            //         loser = 2;
+            //     }
+            // }
 
-             foreach (Actor segment in body2)
-            {
-                if (segment.GetPosition().Equals(head.GetPosition()))
-                {
-                    Actor message = new Actor();
-                    message.SetText("PLAYER 2 WINS!");
-                    message.SetPosition(winMsgPosition);
-                    cast.AddActor("messages", message);
-                    isGameOver = true;
-                    loser = 1;
-                }
-            }
+            //  foreach (Actor segment in body2)
+            // {
+            //     if (segment.GetPosition().Equals(head.GetPosition()))
+            //     {
+            //         Actor message = new Actor();
+            //         message.SetText("PLAYER 2 WINS!");
+            //         message.SetPosition(winMsgPosition);
+            //         cast.AddActor("messages", message);
+            //         isGameOver = true;
+            //         loser = 1;
+            //     }
+            // }
             
         }
 
         private void HandleGameOver(Cast cast)
         {
-            if (isGameOver == true)
-            {
-                //creates instances of both cyclers
-                Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
-                List<Actor> segments = cycler.GetSegments();
-                Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
-                List<Actor> segments2 = cycler2.GetSegments();
+            // if (isGameOver == true)
+            // {
+            //     //creates instances of both cyclers
+            //     Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+            //     List<Actor> segments = cycler.GetSegments();
+            //     Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
+            //     List<Actor> segments2 = cycler2.GetSegments();
 
-                // create a "game over" message
-                int x = (Constants.MAX_X / 2) - 40;
-                int y = Constants.MAX_Y / 2;
-                Point position = new Point(x, y);
+            //     // create a "game over" message
+            //     int x = (Constants.MAX_X / 2) - 40;
+            //     int y = Constants.MAX_Y / 2;
+            //     Point position = new Point(x, y);
 
-                Actor message = new Actor();
-                message.SetText("Game Over!");
-                message.SetPosition(position);
-                cast.AddActor("messages", message);
+            //     Actor message = new Actor();
+            //     message.SetText("Game Over!");
+            //     message.SetPosition(position);
+            //     cast.AddActor("messages", message);
                 
-                if (loser == 1)
-                {
-                    // make all of cycler 1 turn white
-                    foreach (Actor segment in segments)
-                    {   
-                        segment.SetColor(Constants.WHITE);
-                        cycler.SetColor(Constants.WHITE);
-                        Actor head = cycler.GetHead();
-                        head.SetColor(Constants.WHITE);
-                    }
-                }
+                // if (loser == 1)
+                // {
+                //     // make all of cycler 1 turn white
+                //     foreach (Actor segment in segments)
+                //     {   
+                //         segment.SetColor(Constants.WHITE);
+                //         cycler.SetColor(Constants.WHITE);
+                //         Actor head = cycler.GetHead();
+                //         head.SetColor(Constants.WHITE);
+                //     }
+                // }
                 
-                else if (loser == 2)
-                {
-                    // make all of cycler 2 turn white
-                    foreach (Actor segment in segments2)
-                    {    
-                        segment.SetColor(Constants.WHITE);
-                        cycler2.SetColor(Constants.WHITE);
-                        Actor head = cycler2.GetHead();
-                        head.SetColor(Constants.WHITE);
-                    }
-                }    
-            }
+                // else if (loser == 2)
+                // {
+                //     // make all of cycler 2 turn white
+                //     foreach (Actor segment in segments2)
+                //     {    
+                //         segment.SetColor(Constants.WHITE);
+                //         cycler2.SetColor(Constants.WHITE);
+                //         Actor head = cycler2.GetHead();
+                //         head.SetColor(Constants.WHITE);
+                //     }
+                // }    
+            // }
         }
     }
 }
