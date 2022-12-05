@@ -1,6 +1,6 @@
 using System;
 
-namespace CSE2010-finalproject
+namespace PucMan
 {
     public class Actor
     {}
