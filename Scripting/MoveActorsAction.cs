@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Unit05.Game.Casting;
+using PucMan.Game.Casting;
 
 
-namespace Unit05.Game.Scripting
+namespace PucMan.Game.Scripting
 {
     /// <summary>
     /// <para>An update action that moves all the actors.</para>
