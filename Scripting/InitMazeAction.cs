@@ -9,26 +9,26 @@ namespace PucMan.Game.Scripting
     /// <para>An output action that draws all the actors.</para>
     /// <para>The responsibility of DrawActorsAction is to draw each of the actors.</para>
     /// </summary>
-    public class DrawActorsAction : Action
+    public class InitMazeAction : Action
     {
-        private VideoService videoService;
-
+        private bool initialized = false;
         /// <summary>
         /// Constructs a new instance of DrawActorsAction using the given KeyboardService.
         /// </summary>
-        public DrawActorsAction(VideoService videoService)
+        public InitMazeAction()
         {
-            this.videoService = videoService;
+
         }
 
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            List<Actor> allactors = cast.GetAllActors();
-            
-            videoService.ClearBuffer();
-            videoService.DrawActors(allactors);
-            videoService.FlushBuffer();
+            if (initialized == false)
+                {
+                    //Create all the actors for the maze and add them to the cast
+
+                }
+            initialized = true;
         }
     }
 }
