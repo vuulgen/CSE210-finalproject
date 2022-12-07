@@ -21,7 +21,7 @@ namespace PucMan.Game
 
         public static int FRAME_RATE = 90;
         public static int FONT_SIZE = 15;
-        public static string CAPTION = "Cycler";
+        public static string CAPTION = "PucMan";
         
         public static Color RED = new Color(255, 0, 0);
         public static Color WHITE = new Color(255, 255, 255);
