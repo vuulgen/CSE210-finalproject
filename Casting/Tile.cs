@@ -9,14 +9,14 @@ namespace PucMan.Game.Casting
 //     /// The responsibility of Food is to select a random position and points that it's worth.
 //     /// </para>
 //     /// </summary>
-    public class Player : Actor
+    public class Tile : Actor
     {
         private int _points = 0;
 
         /// <summary>
         /// Constructs a new instance of an Food.
         /// </summary>
-        public Player()
+        public Tile()
         {
             SetText("@");
             SetColor(Constants.RED);
