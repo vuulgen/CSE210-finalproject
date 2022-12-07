@@ -19,6 +19,8 @@ namespace PucMan
         {
             // create the cast
             Cast cast = new Cast();
+            Player pucman = new Player();
+            cast.AddActor("Player", pucman);
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
