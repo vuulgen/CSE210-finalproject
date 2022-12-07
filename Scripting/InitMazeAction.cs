@@ -45,7 +45,6 @@ namespace PucMan.Game.Scripting
 
                     // iterate through each element within the array and
                     // print it out
-                    //
                     foreach (var lineRead in linesRead)
                     {
                         Console.WriteLine(lineRead);
